@@ -1,0 +1,99 @@
+<!doctype html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#444">
+
+<title>Notes</title>
+
+<style>
+#box{
+	width: 220px;
+	max-width: 300px;
+	height: 40px;
+	background: white;
+	margin: 2px;
+	display:flex;
+	justify-content: left;
+	align-items: center;
+	border: none;
+	border-radius: 6px;
+	outline: none;
+	font-size: 16px;
+	transform: translateY( -8px);
+	padding: 0;
+}
+#box:hover{
+	animation: hov 30s ease-in 0s 1 normal;
+}
+@keyframes hov{
+	1%{
+	background: #e8e8e8;
+	padding: 3px;
+	font-size: 18px;
+	color: ;}
+}
+a{
+	text-decoration: none;
+	outline: none;
+	
+}
+body{
+	display: ;
+	justify-content: center;
+	margin:0;
+	padding:0;
+	font-family: vardana;
+}
+#content{
+	font-size: 20px;
+	margin: 10px;
+	padding: 10px;
+	
+}
+header{
+	background: #444;
+	color: white;
+	font-size: 20px;
+	padding: 10px;
+	letter-spacing: normal;
+	animation: grasp 2s ease-in 0s 1 normal;
+}
+@keyframes grasp{
+	from{letter-spacing: 60px;}
+}
+li{
+	animation: come 0.5s ease-in 0s 1 normal;
+	
+}
+@keyframes come{
+	from{
+		transform: translateX( -100px);
+		filter: opacity(0%);
+	}
+}
+
+</style>
+
+</head>
+<body>
+<header>
+Maths
+</header>
+
+<section id="content">
+Available Chapters:
+<hr color="#444" width="104px" align="left">
+<ul>
+<li><a href="https://drive.google.com/file/d/1aRZFEp8OfQJ6IfDN5Owi45WwRnzDZU_6/view?usp=drivesdk">
+	<button id="box">Higher Order Derivatives</button> </a> 
+</li><li><a href="https://drive.google.com/file/d/1aQ7ZU5nqm3cQgBil_Pooai1udHZ8F51g/view?usp=drivesdk">
+	<button id="box">Asymptotes</button> </a> 
+</li><li><a href="https://drive.google.com/file/d/1athKDEBDzthSeKKF9ErBnroaXTMB_eSc/view?usp=drivesdk">
+	<button id="box">Curvature</button> </a> 
+</li>
+</ul>
+</section>
+
+
+</body>
+</html>
