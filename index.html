@@ -94,12 +94,13 @@ header{
     color: white;
     font-size: 24px;
     font-family: "Architects Daughter",vardana;
-    padding: 10px 0 10px 30px;
+    padding: 10px 30px 10px 30px;
     letter-spacing: normal;
-    animation: grasp 1s ease-in 0s 1 normal;
 }
-@keyframes grasp{
-    from{letter-spacing: 60px;}
+header #greet{
+  text-align: right;
+  transform: translateY(-29px);
+  font-size: 18px;
 }
 ul{
   display:inline;
@@ -127,7 +128,7 @@ li{
 </head>
 <body class="">
 <header id="header">
-Maths
+<div id="title">Maths</div><div id="greet"></div>
 </header>
 
 <section id="content">
@@ -155,6 +156,17 @@ Available Chapters:
 window.onload= function(){
   var header=document.getElementById('header').style.background;
   document.getElementById('hr').color=header;
+var date=new Date();
+var hr=date.getHours();
+if(hr<12){
+  document.getElementById('greet').innerHTML="Good Morning!!";
+}
+if(hr>=12&&hr<=16){
+  document.getElementById('greet').innerHTML="Good Afternoon!!";
+}
+if(hr>16){
+  document.getElementById('greet').innerHTML="Good Evening!!";
+}
 }
 </script>
 </body>
