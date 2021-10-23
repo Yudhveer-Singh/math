@@ -99,10 +99,11 @@ header{
     letter-spacing: normal;
 }
 header #greet{
-  text-align: right;
-  transform: translateY(-29px);
+  float:right;
+  transform: translateY(-30px);
   font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
+  overflow: visible;
 }
 ul{
   display:inline;
@@ -125,12 +126,30 @@ li{
   width: 100hw;
   background: red;
 }
+footer{
+  background: var(--header);
+  width:100%;
+  height:60px;
+  bottom:0;
+  position:absolute;
+  padding: 22px 10% 20px 10%;
+}
+footer::before{
+  content:"";
+  width:100%;
+  height: 20px;
+  background: var(--body_back);
+  position: absolute;
+  transform: translate(-10%,-34px);
+  border-radius:20px;
+}
 </style>
 <link rel="stylesheet" href="materialize_min.css">
 </head>
 <body class="">
 <header id="header">
-<div id="title">Maths</div><div id="greet"></div>
+<div id="title">Maths</div>
+<div id="greet" class="waves-effect waves-light"></div>
 </header>
 
 <section id="content">
@@ -153,6 +172,12 @@ Available Chapters:
 </ul>
   </section>
 </section>
+<footer>
+  <div class="footer-copyright grey-text text-lighten-4">
+    2021 Copyright
+    <div class="right">version: v3.6</div>
+  </div>
+</footer>
 <script src="materialize.min.js"></script>
 <script>
 window.onload= function(){
