@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#38A600">
+<meta name="theme-color" content="#b64fc8">
 
 <title>Notes</title>
 
@@ -11,8 +11,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 :root{
-  --body_back: white;
-  --main_color: #7ED45A;
+  --body_back: #fff2ff;
+  --main_color: #ec97f9;
+  /*#7ED45A;*/
+  --header: #b64fc8;
+  /*#38A600;*/
 }
 #box{
     width: 220px;
@@ -28,7 +31,7 @@
     outline: none;
     font-size: 14px;
     transform: translateY( -8px);
-    padding: 0 0 0 10px;
+    padding: 0;
     font-family: 'Poppins',sans-serif;
     color: black;
     box-shadow: none;
@@ -60,11 +63,33 @@ body{
   transform: translateY(-80px);
   border-radius: 8px;
   background: var(--body_back);
-  color: #38A600;
+  color: var(--header);
   overflow: visible;
 }
+#subcontent::before{
+  content: "";
+  width:20px;
+  height:20px;
+  background: transparent;
+  position:absolute;
+  border-radius: 90px;
+  transform: translate(-40px,20px);
+  box-shadow: 8px 8px var(--body_back);
+}
+#subcontent::after{
+  content: "";
+  width:20px;
+  height:20px;
+  background: transparent;
+  position:absolute;
+  top:0;
+  right:0;
+  border-radius: 90px;
+  transform: translate(20px,40px);
+  box-shadow: -8px 8px var(--body_back);
+}
 header{
-    background: #38A600;
+    background: var(--header);
     height: 110px;
     color: white;
     font-size: 24px;
@@ -89,7 +114,7 @@ li{
     }
 }
 ::selection{
-  background: #38A600;
+  background: var(--header);
   color: white;
 }
 #back{
@@ -98,17 +123,17 @@ li{
   background: red;
 }
 </style>
-<link rel="stylesheet" href="https://yudhveer-singh.github.io/math/materialize_min.css">
+<link rel="stylesheet" href="materialize_min.css">
 </head>
 <body class="">
-<header>
+<header id="header">
 Maths
 </header>
 
 <section id="content">
   <section id="subcontent" class="waves-effect waves-light">
 Available Chapters:
-<hr color="#38A600" width="104px" align="left">
+<hr id="hr" color="#b64fc8" width="104px" align="left">
 <ul>
 <li style="--i:1;">
   <a href="https://drive.google.com/file/d/1aRZFEp8OfQJ6IfDN5Owi45WwRnzDZU_6/view?usp=drivesdk">
@@ -125,6 +150,12 @@ Available Chapters:
 </ul>
   </section>
 </section>
-<script src="https://yudhveer-singh.github.io/math/materialize.min.js"></script>
+<script src="materialize.min.js"></script>
+<script>
+window.onload= function(){
+  var header=document.getElementById('header').style.background;
+  document.getElementById('hr').color=header;
+}
+</script>
 </body>
 </html>
