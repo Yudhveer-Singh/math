@@ -2,11 +2,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#b64fc8">
-
 <title>Notes</title>
-
 <style>
-	
 @import url("https://fonts.googleapis.com/css?family=Architects+Daughter");
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
@@ -15,9 +12,11 @@
   --body_back: #ffe8ff;
   --main_color: #ec97f9;
   /*#7ED45A;*/
+  --main_light:#ffb2ff;
   --header: #b64fc8;
   /*#38A600;*/
   --main_dark: #863896;
+  --badge: var(--header);
 }
 #box{
     width: 220px;
@@ -135,17 +134,32 @@ footer{
   width:100%;
   height:60px;
   bottom:0;
-  position:absolute;
-  padding: 22px 10% 20px 10%;
+  position:fixed;
+  padding: 20px 10% 0px 10%;
 }
 footer::before{
   content:"";
-  width:100%;
+  width:20px;
   height: 20px;
-  background: var(--body_back);
+  background: transparent;
   position: absolute;
-  transform: translate(-10%,-34px);
+  transform: translate(0px,-20px);
+  box-shadow: -10px 10px var(--header);
   border-radius:20px;
+  left:0;
+  top:0;
+}
+footer::after{
+  content:"";
+  width:20px;
+  height: 20px;
+  background: transparent;
+  position: absolute;
+  transform: translate(0px,-20px);
+  box-shadow: 10px 10px var(--header);
+  border-radius:20px;
+  right:0;
+  top:0;
 }
 #content_card #div{
   background: var(--header);
@@ -175,10 +189,49 @@ footer::before{
   left:0;
   transform: translateY(26px);
 }
+.description{
+  width: fit-content;
+  padding: 0 0 10px 0;
+  background: var(--main_light);
+  border-radius: 8px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  bottom:36px;
+  right:18px;
+  transform: translateX(260px);
+  font-size:16px;
+  font-family: 'Poppins',sans-serif;
+  transition-duration: 1s;
+}
+.description div{
+  background: var(--header);
+  color: white;
+  padding:10px 16px 10px 16px;
+  margin: 0 0 10px 0;
+  border-radius: 8px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.description span{
+  padding:16px;
+  font-size: 14px;
+}
 </style>
 <link rel="stylesheet" href="materialize_min.css">
+<style>
+.progress{
+  position: absolute;
+  margin:0;
+}
+</style>
+<script src="jquery.min.js"></script>
 </head>
 <body>
+<div class="description">
+  <div>What's new:</div>
+  <span>– 2 footer bugs fixed</span><br>
+  <span>+ What's new popup added</span>
+</div>
 <header id="header">
 <div id="title">Maths</div>
 <!--<div id="greet" class="waves-effect waves-light"></div>-->
@@ -210,13 +263,18 @@ footer::before{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right">version: v4.3.2</div>
+    <div class="right version">version: v4.5.7</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
-<script src="jquery.min.js"></script>
+<!--<script src="jquery.min.js"></script>-->
 <script>
-
+/*  --body_back: #ffe8ff;
+  --main_color: #ec97f9;
+  #7ED45A;
+  --header: #b64fc8;
+  #38A600;
+  --main_dark: #863896;*/
 /*//-----header
 $("body").prepend($('<header></header>').attr('id',"header"));
 $("#header").prepend($('<div></div>').attr('id','title').html('Maths'));
@@ -242,6 +300,16 @@ if(hrs>16){
   document.getElementById('greet').innerHTML="Good Evening!!";
   //$('#greet').html('Good Evening!!');
 }
+$(".version").mouseenter(function(){
+  $(".description").css({
+    "transform":"translateX(0px)"
+  });
+});
+$(".version").mouseleave(function(){
+  $(".description").css({
+    "transform":"translateX(260px)"
+  });
+});
 </script>
 </body>
 </html>
