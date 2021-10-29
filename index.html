@@ -220,17 +220,22 @@ footer::after{
 <link rel="stylesheet" href="materialize_min.css">
 <style>
 .progress{
-  position: absolute;
+  position: fixed;
   margin:0;
+  display:block;
 }
 </style>
 <script src="jquery.min.js"></script>
 </head>
 <body>
+<div class="progress">
+  <div class="indeterminate"></div>
+</div>
 <div class="description">
   <div>What's new:</div>
   <span>– 2 footer bugs fixed</span><br>
-  <span>+ What's new popup added</span>
+  <span>+ What's new popup added</span><br>
+  <span>+ preloader added <b>(beta)</b></span>
 </div>
 <header id="header">
 <div id="title">Maths</div>
@@ -263,7 +268,7 @@ footer::after{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right version">version: v4.5.7</div>
+    <div class="right version">version: v4.6.1</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
@@ -311,5 +316,6 @@ $(".version").mouseleave(function(){
   });
 });
 </script>
+<script src="preloader.js"></script>
 </body>
 </html>
