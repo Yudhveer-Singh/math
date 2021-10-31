@@ -1,5 +1,6 @@
 <!doctype html>
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#b64fc8">
 <meta property="og:image" content="https://yudhveer-singh.github.io/math/maths.png" />
@@ -8,7 +9,7 @@
 <meta property="og:title" content="Math notes" />
 <meta property="og:url" content="https://yudhveer-singh.github.io/math" />
 <meta property="og:description" content="Contribute to Yudhveer-Singh" />
-<title>Maths</title>
+<title>Notes</title>
 <style>
 @import url("https://fonts.googleapis.com/css?family=Architects+Daughter");
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
@@ -17,10 +18,8 @@
 :root{
   --body_back: #ffe8ff;
   --main_color: #ec97f9;
-  /*#7ED45A;*/
   --main_light:#ffb2ff;
   --header: #b64fc8;
-  /*#38A600;*/
   --main_dark: #863896;
   --badge: var(--header);
 }
@@ -38,7 +37,7 @@
     outline: none;
     font-size: 14px;
     transform: translateY( -8px);
-    padding: 0;
+    padding: 0 6px 0 6px;
     font-family: 'Poppins',sans-serif;
     color: black;
     box-shadow: none;
@@ -198,17 +197,18 @@ footer::after{
 .description{
   width: fit-content;
   padding: 0 0 10px 0;
-  background: var(--main_light);
+  background: var(--body_back);
   border-radius: 8px;
   overflow: hidden;
   position: fixed;
   z-index: 10;
   bottom:36px;
   right:18px;
-  transform: translateX(280px);
+  transform: translateX(260px);
   font-size:16px;
   font-family: 'Poppins',sans-serif;
   transition-duration: 1s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 .description div{
   background: var(--header);
@@ -222,6 +222,70 @@ footer::after{
   padding:16px;
   font-size: 14px;
 }
+.login{
+  width: fit-content;
+  padding: 16px;
+  background: var(--body_back);
+  border-radius: 8px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  top:18px;
+  left:18px;
+  transform: translateX(-320px);
+  font-size:16px;
+  font-family: 'Poppins',sans-serif;
+  transition-duration: 1s;
+  text-align: right;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  
+}
+.btn_login{
+  background: var(--header);
+  color: white;
+  padding:14px 18px 14px 18px;
+  border:none;
+  border-radius: 22px;
+  transition-duration: 1s;
+}
+.btn_login:hover{
+  background: var(--header);
+  border-radius: 4px;
+}
+.btn_login_cancel{
+  background: var(--main_light);
+  color: var(--main_dark);
+  padding:14px 18px 14px 18px;
+  border:none;
+  border-radius: 22px;
+  transition-duration: 0.5s;
+}
+.btn_login_cancel:hover{
+  background: var(--main_light);
+  border-radius: 4px;
+}
+.menu{
+  position: absolute;
+  z-index:11;
+  background: var(--body_back);
+  width: fit-content;
+  min-width: 160px;
+  padding: 16px;
+  box-shadow:0 10px 50px rgba(0,0,0,0.15);
+  border-radius: 8px 0 0 8px;
+  right:0;
+  top:40px;
+  display:none;
+}
+.menu_icon{
+  position:absolute;
+  top:12px;
+  right:10px;
+}
+.menu_icon img{
+  width: 22px;
+  height:22px;
+}
 </style>
 <link rel="stylesheet" href="materialize_min.css">
 <style>
@@ -229,6 +293,9 @@ footer::after{
   position: fixed;
   margin:0;
   display:block;
+}
+a{
+  color:inherit;
 }
 </style>
 <script src="jquery.min.js"></script>
@@ -242,16 +309,36 @@ footer::after{
   <span>– 2 footer bugs fixed</span><br>
   <span>+ What's new popup added</span><br>
   <span>+ preloader added <b>(beta)</b></span><br>
- <span>+ social media preview added<b>(beta)</b></span>
+  <span>+ social media preview</span><br>
+  <span>+ name remember<b>(beta)</b></span><br>
+  <span>+ side menu added</span>
+</div>
+<div class="login">
+  <div class="input-field">
+  <input type="text" id="login_name">
+  <label for="login_name">Enter Your Short Name</label>
+  </div>
+  <button class="btn_login_cancel">exit</button>
+  <button class="btn_login">submit</button>
+</div>
+<div class="menu">
+  <a href="https://wa.me/+919872629870">
+    <div class="feedback">FEEDBACK</div>
+  </a><br>
+  <div class="reset">RESET</div>
 </div>
 <header id="header">
 <div id="title">Maths</div>
+<div class="menu_icon">
+  <img src="menu.svg"></img>
+   <!--<i class="tiny material-icons">view_headline</i>-->
+  </div>
 <!--<div id="greet" class="waves-effect waves-light"></div>-->
 </header>
 
 <section id="content">
   <section id="subcontent">
-    <div id="greet" class="waves-effect waves-light"></div>
+    <div id="greet"></div>
     <section id="content_card">
 <div id="div">Available Chapters:</div>
 <!--<hr id="hr" color="#b64fc8" width="104px" align="left">-->
@@ -275,12 +362,17 @@ footer::after{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right version">version: v4.6.2</div>
+    <div class="right version">version: v4.8.3</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
 <!--<script src="jquery.min.js"></script>-->
 <script>
+if(localStorage.getItem("name")=="" || localStorage.getItem("name")==null){
+  var name="";
+}else{
+  var name=", "+localStorage.getItem("name");
+}
 /*  --body_back: #ffe8ff;
   --main_color: #ec97f9;
   #7ED45A;
@@ -301,15 +393,15 @@ $('#content').append($('<section></section>').attr('id','subcontent'));*/
 var date=new Date();
 var hrs=date.getHours();
 if(hrs<12){
-  document.getElementById('greet').innerHTML="Good Morning!!";
+  document.getElementById('greet').innerHTML="Good Morning"+name+"!!";
   //$('#greet').html('Good Morning!!');
 }
 if(hrs>=12&&hrs<=16){
-  document.getElementById('greet').innerHTML="Good Afternoon!!";
+  document.getElementById('greet').innerHTML="Good Afternoon"+name+"!!";
   //$('#greet').html('Good Afternoon!!');
 }
 if(hrs>16){
-  document.getElementById('greet').innerHTML="Good Evening!!";
+  document.getElementById('greet').innerHTML="Good Evening"+name+"!!";
   //$('#greet').html('Good Evening!!');
 }
 $(".version").mouseenter(function(){
@@ -319,8 +411,32 @@ $(".version").mouseenter(function(){
 });
 $(".version").mouseleave(function(){
   $(".description").css({
-    "transform":"translateX(280px)"
+    "transform":"translateX(260px)"
   });
+});
+$("#greet").click(function (){
+  $(".login").css({
+    "transform":"translateX(0px)"
+  });
+});
+$(".btn_login").click(function(){
+  let name=$("#login_name").val();
+  localStorage.setItem("name",name);
+  $(".login").css({
+    "transform":"translateX(-320px)"
+  });
+});
+$(".btn_login_cancel").click(function(){
+  $(".login").css({
+    "transform":"translateX(-320px)"
+  });
+});
+$(".menu .reset").click(function(){
+  localStorage.clear();
+  $(".menu_icon").trigger("click");
+});
+$(".menu_icon").click(function(){
+  $(".menu").slideToggle(500);
 });
 </script>
 <script src="preloader.js"></script>
