@@ -265,26 +265,31 @@ footer::after{
   border-radius: 4px;
 }
 .menu{
-  position: absolute;
+  position: fixed;
   z-index:11;
   background: var(--body_back);
   width: fit-content;
   min-width: 160px;
   padding: 16px;
   box-shadow:0 10px 50px rgba(0,0,0,0.15);
-  border-radius: 8px 0 0 8px;
-  right:0;
+  border-radius: 8px;
+  right:8px;
   top:40px;
-  display:none;
+  transform: translateX(180px);
+  transition-duration: 1s;
 }
 .menu_icon{
   position:absolute;
   top:12px;
-  right:10px;
+  right:30px;
 }
 .menu_icon img{
   width: 22px;
   height:22px;
+  transform: rotateZ(90deg);
+}
+.menu_on{
+  transform: translateX(0px);
 }
 </style>
 <link rel="stylesheet" href="materialize_min.css">
@@ -362,7 +367,7 @@ a{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right version">version: v4.8.3</div>
+    <div class="right version">version: v4.8.5</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
@@ -436,7 +441,7 @@ $(".menu .reset").click(function(){
   $(".menu_icon").trigger("click");
 });
 $(".menu_icon").click(function(){
-  $(".menu").slideToggle(500);
+  $(".menu").toggleClass("menu_on");
 });
 </script>
 <script src="preloader.js"></script>
