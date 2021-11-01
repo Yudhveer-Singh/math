@@ -238,7 +238,13 @@ footer::after{
   transition-duration: 1s;
   text-align: right;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  
+}
+.login .login_head{
+  font-size: 22px;
+  text-align: left;
+  border-bottom: 2px solid var(--main_dark);
+  width:80px;
+  margin:0 0 30px 0;
 }
 .btn_login{
   background: var(--header);
@@ -266,11 +272,11 @@ footer::after{
 }
 .menu{
   position: fixed;
-  z-index:11;
+  z-index:9;
   background: var(--body_back);
-  width: fit-content;
+  width: 0px;
   min-width: 160px;
-  padding: 16px;
+  padding: 16px 0 16px 0;
   box-shadow:0 10px 50px rgba(0,0,0,0.15);
   border-radius: 8px;
   right:8px;
@@ -290,6 +296,11 @@ footer::after{
 }
 .menu_on{
   transform: translateX(0px);
+}
+.m{
+  width:100%;
+  padding:10px 4px 10px 16px;
+  display:block;
 }
 </style>
 <link rel="stylesheet" href="materialize_min.css">
@@ -316,9 +327,11 @@ a{
   <span>+ preloader added <b>(beta)</b></span><br>
   <span>+ social media preview</span><br>
   <span>+ name remember<b>(beta)</b></span><br>
-  <span>+ side menu added</span>
+  <span>+ side menu added</span><br>
+  <span>+ new chapters</span>
 </div>
 <div class="login">
+  <div class="login_head">Sign In</div>
   <div class="input-field">
   <input type="text" id="login_name">
   <label for="login_name">Enter Your Short Name</label>
@@ -327,10 +340,11 @@ a{
   <button class="btn_login">submit</button>
 </div>
 <div class="menu">
+  <div class="m sign_in waves-effect waves-green">SIGN IN</div>
   <a href="https://wa.me/+919872629870">
-    <div class="feedback">FEEDBACK</div>
-  </a><br>
-  <div class="reset">RESET</div>
+    <div class="m feedback waves-effect waves-green">FEEDBACK</div>
+  </a>
+  <div class="m reset waves-effect waves-green">RESET</div>
 </div>
 <header id="header">
 <div id="title">Maths</div>
@@ -360,6 +374,16 @@ a{
   <a href="https://drive.google.com/file/d/1athKDEBDzthSeKKF9ErBnroaXTMB_eSc/view?usp=drivesdk">
     <button id="box" class="waves-effect waves-green btn">Curvature</button> </a> 
 </li>
+<li style="--i:1.9;">
+  <a href="https://drive.google.com/file/d/1fjEU2mnXf6mgFOkKFPkv92UWU_UlAS-X/view?usp=drivesdk">
+    <button id="box" class="waves-effect waves-green btn">Concavity
+    <span class="badge new"></span></button></a>
+</li>
+<li style="--i:2.2;">
+  <a href="https://drive.google.com/file/d/1ffGU28-lLlYeOsTdJ8Q2NgIyhGbWXKp5/view?usp=drivesdk">
+    <button id="box" class="waves-effect waves-green btn">Multiple Points<span class="badge new"></span>
+    </button> </a> 
+</li>
 </ul>
     </section>
   </section>
@@ -367,7 +391,7 @@ a{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right version">version: v4.8.5</div>
+    <div class="right version">version: v4.9.0</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
@@ -442,6 +466,11 @@ $(".menu .reset").click(function(){
 });
 $(".menu_icon").click(function(){
   $(".menu").toggleClass("menu_on");
+});
+$(".sign_in").click(function(){
+  $(".login").css({
+    "transform":"translateX(0px)"
+  });
 });
 </script>
 <script src="preloader.js"></script>
