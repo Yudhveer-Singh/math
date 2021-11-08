@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#b64fc8">
+<meta name="theme-color" content="#d0181e">
 <meta property="og:image" content="https://yudhveer-singh.github.io/math/maths.png" />
 <meta property="og:site_name" content="Maths" />
 <meta  property="og:type" content="object" />
@@ -10,298 +10,9 @@
 <meta property="og:url" content="https://yudhveer-singh.github.io/math" />
 <meta property="og:description" content="Contribute to Yudhveer-Singh" />
 <title>Notes</title>
+<link rel="stylesheet" href="styles.css">
 <style>
-@import url("https://fonts.googleapis.com/css?family=Architects+Daughter");
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-:root{
-  --body_back: #ffe8ff;
-  --main_color: #ec97f9;
-  --main_light:#ffb2ff;
-  --header: #b64fc8;
-  --main_dark: #863896;
-  --badge: var(--header);
-}
-#box{
-    width: 220px;
-    max-width: 300px;
-    height: 52px;
-    background: transparent;
-    margin: 2px;
-    display:flex;
-    justify-content: left;
-    align-items: center;
-    border: none;
-    border-radius: 6px;
-    outline: none;
-    font-size: 14px;
-    transform: translateY( -8px);
-    padding: 0 6px 0 6px;
-    font-family: 'Poppins',sans-serif;
-    color: black;
-    box-shadow: none;
-    line-height: 20px;
-}
-a{
-    text-decoration: none;
-    outline: none;
-    
-}
-body{
-    background: var(--body_back);
-    justify-content: center;
-    margin:0;
-    padding:0;
-    font-family: vardana;
-    min-height: 100vh;
-}
-#content{
-    font-size: 20px;
-    margin: 10px;
-    padding: 10px;
-    display:flex;
-    justify-content: center;
-}
-#content_card{
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-  border-radius: 10px;
-  padding:12px;
-  margin-top: 16px;
-}
-#subcontent{
-  padding: 20px;
-  transform: translateY(-80px);
-  border-radius: 8px;
-  background: var(--body_back);
-  color: var(--header);
-  overflow: visible;
-}
-#subcontent::before{
-  content: "";
-  width:20px;
-  height:20px;
-  background: transparent;
-  position:absolute;
-  border-radius: 90px;
-  transform: translate(-40px,20px);
-  box-shadow: 8px 8px var(--body_back);
-}
-#subcontent::after{
-  content: "";
-  width:20px;
-  height:20px;
-  background: transparent;
-  position:absolute;
-  top:0;
-  right:0;
-  border-radius: 90px;
-  transform: translate(20px,40px);
-  box-shadow: -8px 8px var(--body_back);
-}
-header{
-    background: var(--header);
-    height: 110px;
-    color: white;
-    font-size: 24px;
-    font-family: "Architects Daughter",vardana;
-    padding: 10px 30px 10px 30px;
-    letter-spacing: normal;
-}
-#greet{
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 18px;
-  overflow: visible;
-}
-ul{
-  display:inline;
-}
-li{
-  animation: come calc(0.5s*var(--i)) ease-in 0s 1 normal;
-}
-@keyframes come{
-    from{
-        transform: translateX(calc(-100px*var(--i)));;
-        filter: opacity(0%);
-    }
-}
-::selection{
-  background: var(--header);
-  color: white;
-}
-#back{
-  height:100vh;
-  width: 100hw;
-  background: red;
-}
-footer{
-  background: var(--header);
-  width:100%;
-  height:60px;
-  bottom:0;
-  position:fixed;
-  padding: 20px 10% 0px 10%;
-}
-footer::before{
-  content:"";
-  width:20px;
-  height: 20px;
-  background: transparent;
-  position: absolute;
-  transform: translate(0px,-20px);
-  box-shadow: -10px 10px var(--header);
-  border-radius:20px;
-  left:0;
-  top:0;
-}
-footer::after{
-  content:"";
-  width:20px;
-  height: 20px;
-  background: transparent;
-  position: absolute;
-  transform: translate(0px,-20px);
-  box-shadow: 10px 10px var(--header);
-  border-radius:20px;
-  right:0;
-  top:0;
-}
-#content_card #div{
-  background: var(--header);
-  color: white;
-  font-family: Courgette, cursive;
-  padding: 6px 30px 6px 30px;
-  transform: translateX(-22px);
-  border-radius: 10px 10px 10px 0;
-  margin-bottom: 16px;
-}
-#content_card #div::after{
-  content:"";
-  width: 10px;
-  height: 20px;
-  background: var(--main_dark);
-  position: absolute;
-  left:0;
-  transform: translateY(36px);
-  border-radius: 10px 0 0 10px;
-}
-#content_card #div::before{
-  content:"";
-  width: 10px;
-  height: 20px;
-  background: var(--header);
-  position: absolute;
-  left:0;
-  transform: translateY(26px);
-}
-.description{
-  width: fit-content;
-  padding: 0 0 10px 0;
-  background: var(--body_back);
-  border-radius: 8px;
-  overflow: hidden;
-  position: fixed;
-  z-index: 10;
-  bottom:36px;
-  right:18px;
-  transform: translateX(260px);
-  font-size:16px;
-  font-family: 'Poppins',sans-serif;
-  transition-duration: 1s;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-.description div{
-  background: var(--header);
-  color: white;
-  padding:10px 16px 10px 16px;
-  margin: 0 0 10px 0;
-  border-radius: 8px;
-  font-family: 'Ubuntu', sans-serif;
-}
-.description span{
-  padding:16px;
-  font-size: 14px;
-}
-.login{
-  width: fit-content;
-  padding: 16px;
-  background: var(--body_back);
-  border-radius: 8px;
-  overflow: hidden;
-  position: fixed;
-  z-index: 10;
-  top:18px;
-  left:18px;
-  transform: translateX(-320px);
-  font-size:16px;
-  font-family: 'Poppins',sans-serif;
-  transition-duration: 1s;
-  text-align: right;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-.login .login_head{
-  font-size: 22px;
-  text-align: left;
-  border-bottom: 2px solid var(--main_dark);
-  width:80px;
-  margin:0 0 30px 0;
-}
-.btn_login{
-  background: var(--header);
-  color: white;
-  padding:14px 18px 14px 18px;
-  border:none;
-  border-radius: 22px;
-  transition-duration: 1s;
-}
-.btn_login:hover{
-  background: var(--header);
-  border-radius: 4px;
-}
-.btn_login_cancel{
-  background: var(--main_light);
-  color: var(--main_dark);
-  padding:14px 18px 14px 18px;
-  border:none;
-  border-radius: 22px;
-  transition-duration: 0.5s;
-}
-.btn_login_cancel:hover{
-  background: var(--main_light);
-  border-radius: 4px;
-}
-.menu{
-  position: fixed;
-  z-index:9;
-  background: var(--body_back);
-  width: 0px;
-  min-width: 160px;
-  padding: 16px 0 16px 0;
-  box-shadow:0 10px 50px rgba(0,0,0,0.15);
-  border-radius: 8px;
-  right:8px;
-  top:40px;
-  transform: translateX(180px);
-  transition-duration: 1s;
-}
-.menu_icon{
-  position:absolute;
-  top:12px;
-  right:30px;
-}
-.menu_icon img{
-  width: 22px;
-  height:22px;
-  transform: rotateZ(90deg);
-}
-.menu_on{
-  transform: translateX(0px);
-}
-.m{
-  width:100%;
-  padding:10px 4px 10px 16px;
-  display:block;
-}
+
 </style>
 <link rel="stylesheet" href="materialize_min.css">
 <style>
@@ -313,6 +24,15 @@ footer::after{
 a{
   color:inherit;
 }
+.o{
+  font-size: 20px;
+  float:right;
+}
+@media screen and (min-width: 800px){
+  header {
+    font-size: 28px;
+  }
+}
 </style>
 <script src="jquery.min.js"></script>
 </head>
@@ -322,10 +42,15 @@ a{
 </div>
 <div class="description">
   <div>What's new:</div>
-  <span>+ name remember<b>(beta)</b></span><br>
-  <span>+ side menu added</span><br>
-  <span>+ new chapters</span><br>
-  <span>+ refresh option</span>
+  <span>+ miner changes</span><br>
+  <span>+ new popup added</span><br>
+  <span>+ device info added</span><br>
+  <span>+ 1/5x faster</span><br>
+  <span>+ eye-friendly UI</span><br>
+  <span>+ stability on desktop</span><br>
+  <span>+ feedback updated</span><br>
+  <span>+ material icons ready</span><br>
+  <span>+ 🎉600+ lines of code</span>
 </div>
 <div class="login">
   <div class="login_head">Sign In</div>
@@ -338,14 +63,21 @@ a{
 </div>
 <div class="menu">
   <a href="">
-    <div class="m refresh waves-effect waves-green">REFRESH<span class="new badge"></span></div>
+    <div class="m refresh waves-effect waves-green">REFRESH</div>
   </a>
   <div class="m sign_in waves-effect waves-green">SIGN IN</div>
-  <a href="https://wa.me/+919872629870">
+  <!--<a href="https://wa.me/+919872629870">-->
+  <a href="mailto:ys.batth62@gmail.com?cc=ekamcosine@gmail.com&subject=FEEDBACK&body=/*Enter Your Feed Here*/">
     <div class="m feedback waves-effect waves-green">FEEDBACK</div>
   </a>
+  <div class="m device_info_pop waves-effect waves-green" onclick="device_info_pop()">DEVICE INFO</div>
   <div class="m reset waves-effect waves-green">RESET</div>
+  <div class="foot">based on Material UI</div>
 </div>
+<!--<div class="popup">
+  <div class="popup_close"></div>
+  hi
+</div>-->
 <header id="header">
 <div id="title">Maths</div>
 <div class="menu_icon">
@@ -376,12 +108,11 @@ a{
 </li>
 <li style="--i:1.9;">
   <a href="https://drive.google.com/file/d/1fjEU2mnXf6mgFOkKFPkv92UWU_UlAS-X/view?usp=drivesdk">
-    <button id="box" class="waves-effect waves-green btn">Concavity
-    <span class="badge new"></span></button></a>
+    <button id="box" class="waves-effect waves-green btn">Concavity</button></a>
 </li>
 <li style="--i:2.2;">
   <a href="https://drive.google.com/file/d/1ffGU28-lLlYeOsTdJ8Q2NgIyhGbWXKp5/view?usp=drivesdk">
-    <button id="box" class="waves-effect waves-green btn">Multiple Points<span class="badge new"></span>
+    <button id="box" class="waves-effect waves-green btn">Multiple Points
     </button> </a> 
 </li>
 </ul>
@@ -391,47 +122,51 @@ a{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right version">version: v4.10.3</div>
+    <div class="right version">version: v5.2.0</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
-<!--<script src="jquery.min.js"></script>-->
 <script>
 if(localStorage.getItem("name")=="" || localStorage.getItem("name")==null){
   var name="";
 }else{
   var name=", "+localStorage.getItem("name");
 }
-/*  --body_back: #ffe8ff;
-  --main_color: #ec97f9;
-  #7ED45A;
-  --header: #b64fc8;
-  #38A600;
-  --main_dark: #863896;*/
-/*//-----header
-$("body").prepend($('<header></header>').attr('id',"header"));
-$("#header").prepend($('<div></div>').attr('id','title').html('Maths'));
-
-//------content
-$('body').append($('<section></section>').attr('id','content'));
-$('#content').append($('<section></section>').attr('id','subcontent'));*/
-/*window.onload= function(){
-  var header=document.getElementById('header').style.background;
-  document.getElementById('hr').color=header;
-  }*/
 var date=new Date();
 var hrs=date.getHours();
 if(hrs<12){
   document.getElementById('greet').innerHTML="Good Morning"+name+"!!";
-  //$('#greet').html('Good Morning!!');
 }
 if(hrs>=12&&hrs<=16){
   document.getElementById('greet').innerHTML="Good Afternoon"+name+"!!";
-  //$('#greet').html('Good Afternoon!!');
 }
 if(hrs>16){
   document.getElementById('greet').innerHTML="Good Evening"+name+"!!";
-  //$('#greet').html('Good Evening!!');
+}
+var day=date.getDay();
+var dayName;
+switch(day){
+  case 0:
+    var dayName="Sunday";
+    break;
+  case 1:
+    var dayName="Monday";
+    break;
+  case 2:
+    var dayName="Tuesday";
+    break;
+  case 3:
+    var dayName="Wednesday";
+    break;
+  case 4:
+    var dayName="Thusday";
+    break;
+  case 5:
+    var dayName="Friday";
+    break;
+  case 6:
+    var dayName="Seturday";
+    break;
 }
 $(".version").mouseenter(function(){
   $(".description").css({
@@ -472,6 +207,27 @@ $(".sign_in").click(function(){
     "transform":"translateX(0px)"
   });
 });
+function pop(message){
+  $("body").append($('<div></div>').attr("class","popup").html(message));
+  $(".popup").append($('<div></div>').attr("class","popup_close"));
+  $(".popup_close").click(function(){
+    $(".popup").css({
+      "display":"none"
+    });
+  });
+}
+//pop("Hi"+name+"<br>Have a nice "+dayName+".");
+function device_info_pop(){
+pop(
+  "<u><b>Device Info</b></u>:-<br>"+
+  "<b>Width: </b>"+$('body').css("width")+"<br>"
++"<b>Height: </b>"+$('body').css("height")+"<br>"
++"<b>Browser</b>: "+navigator.appVersion+"<br>");
+}
+if(localStorage.getItem("pop_600")==null){
+  pop('Celebrating 600+ lines of code<span style="font-size:30px;">🎉🎊</span>');
+  localStorage.setItem("pop_600","ok");
+}
 </script>
 <script src="preloader.js"></script>
 </body>
