@@ -74,6 +74,17 @@ a{
   <div class="m reset waves-effect waves-green">RESET</div>
   <div class="foot">based on Material UI</div>
 </div>
+<div class="asistive_touch">
+  <div class="asis_launcher material-icons">menu</div>
+  <a href=""><div class="asis_1 material-icons">refresh
+  </div></a>
+  <div class="sign_in asis_2 material-icons">face
+  </div>
+  <a href="mailto:ys.batth62@gmail.com?cc=ekamcosine@gmail.com&subject=FEEDBACK&body=/*Enter Your Feed Here*/"><div class="asis_3 material-icons">send
+  </div></a>
+  <div class="asis_4 material-icons" onclick="device_info_pop()">info</div>
+  <div class="asis_5 reset material-icons">delete</div>
+</div>
 <!--<div class="popup">
   <div class="popup_close"></div>
   hi
@@ -228,6 +239,29 @@ if(localStorage.getItem("pop_600")==null){
   pop('Celebrating 600+ lines of code<span style="font-size:30px;">🎉🎊</span>');
   localStorage.setItem("pop_600","ok");
 }
+var asis_var=0;
+function asist_off(){
+  $(".asis_1,.asis_2,.asis_3,.asis_4,.asis_5").css({
+    "transform":"translateY(0)"
+  });
+}
+function asist_on(){
+  $(".asis_1").css({"transform":"translateY(-60px)"});
+  $(".asis_2").css({"transform":"translateY(-120px)"});
+  $(".asis_3").css({"transform":"translateY(-180px)"});
+  $(".asis_4").css({"transform":"translateY(-240px)"});
+  $(".asis_5").css({"transform":"translateY(-300px)"});
+}
+$(".asis_launcher").click(function (){
+  if(asis_var==0){
+    asist_on();
+    asis_var++;
+  }
+  else{
+    asist_off();
+    asis_var--;
+  }
+});
 </script>
 <script src="preloader.js"></script>
 </body>

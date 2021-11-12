@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-/*@font-face {font-family: 'Material Icons';font-style: normal;font-weight: 400;src: url(material_icons.woff2) format('woff2');}
+@font-face {font-family: 'Material Icons';font-style: normal;font-weight: 400;src: url(material_icons.woff2) format('woff2');}
 
   .material-icons {
    font-family: 'Material Icons';
@@ -18,7 +18,7 @@
    direction: ltr;
    -webkit-font-feature-settings: 'liga';
    -webkit-font-smoothing: antialiased;
-  }*/
+  }
 :root{
   /*red*/
   --body_back: #ffedef;
@@ -65,7 +65,6 @@
 a{
     text-decoration: none;
     outline: none;
-    
 }
 body{
     background: var(--body_back);
@@ -141,7 +140,7 @@ li{
 }
 @keyframes come{
     from{
-        transform: translateX(calc(-100px*var(--i)));;
+        transform: translateX(calc(-100px*var(--i)));
         filter: opacity(0%);
     }
 }
@@ -384,3 +383,34 @@ footer::after{
   font-size: 12px;
   font-family: 'Ubuntu',sans-serif;
 }
+.asistive_touch{
+  position:fixed;
+  z-index: 2;
+  bottom:72px;
+  right:12px;
+  width:50px;
+  background: var(--body_back);
+  height:50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 50px rgba(0,0,0,0.15);
+}
+.asis_launcher,.asis_1,.asis_2,.asis_3,.asis_4,.asis_5,.asistive_touch a{
+  z-index: 10;
+  position: fixed;
+  background: var(--body_back);
+  color: var(--header);
+  border-radius:14px;
+  box-shadow: inset -2px -2px 5px rgba(256,256,256,1),
+ inset 3px 3px 5px rgba(0,0,0,0.1);
+  width: 40px;
+  height: 40px;
+  transition-duration: 1s;
+  transform: translateY(0px);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.asis_launcher{z-index:11;}
