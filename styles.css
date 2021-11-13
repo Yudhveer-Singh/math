@@ -20,6 +20,13 @@
    -webkit-font-smoothing: antialiased;
   }
 :root{
+  /*blue*/
+  /*--body_back: #eef2ff;
+  --main_color: #64c1ff;
+  --main_light: #aae8ff;
+  --header: #0091ea;
+  --main_dark: #0064b7;
+  --badge: var(--header);*/
   /*red*/
   --body_back: #ffedef;
   --main_color: #f3989b;
@@ -397,9 +404,15 @@ footer::after{
   align-items: center;
   box-shadow: 0px 10px 50px rgba(0,0,0,0.15);
 }
-.asis_launcher,.asis_1,.asis_2,.asis_3,.asis_4,.asis_5,.asistive_touch a{
+.asis_launcher,
+.asis_1,
+.asis_2,
+.asis_3,
+.asis_4,
+.asis_5,
+.asistive_touch a{
   z-index: 10;
-  position: fixed;
+  position: fixed !important;
   background: var(--body_back);
   color: var(--header);
   border-radius:14px;

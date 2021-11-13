@@ -32,6 +32,9 @@ a{
   header {
     font-size: 28px;
   }
+  .popup{
+    max-width:420px;
+  }
 }
 </style>
 <script src="jquery.min.js"></script>
@@ -43,14 +46,11 @@ a{
 <div class="description">
   <div>What's new:</div>
   <span>+ miner changes</span><br>
-  <span>+ new popup added</span><br>
-  <span>+ device info added</span><br>
-  <span>+ 1/5x faster</span><br>
-  <span>+ eye-friendly UI</span><br>
-  <span>+ stability on desktop</span><br>
-  <span>+ feedback updated</span><br>
-  <span>+ material icons ready</span><br>
-  <span>+ 🎉600+ lines of code</span>
+  <span>+ material icons added</span><br>
+  <span>+ assistive touch added</span><br>
+  <span>+ reset option updated</span><br>
+  <span>+ popup bug fixed</span><br>
+  <span>+ 🎉700+ lines of code</span>
 </div>
 <div class="login">
   <div class="login_head">Sign In</div>
@@ -133,7 +133,7 @@ a{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right version">version: v5.2.0</div>
+    <div class="right version">version: v5.4.0</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
@@ -209,6 +209,7 @@ $(".btn_login_cancel").click(function(){
 $(".menu .reset").click(function(){
   localStorage.clear();
   $(".menu_icon").trigger("click");
+  window.location.replace("");
 });
 $(".menu_icon").click(function(){
   $(".menu").toggleClass("menu_on");
@@ -235,9 +236,9 @@ pop(
 +"<b>Height: </b>"+$('body').css("height")+"<br>"
 +"<b>Browser</b>: "+navigator.appVersion+"<br>");
 }
-if(localStorage.getItem("pop_600")==null){
-  pop('Celebrating 600+ lines of code<span style="font-size:30px;">🎉🎊</span>');
-  localStorage.setItem("pop_600","ok");
+if(localStorage.getItem("pop_700")==null){
+  pop('Celebrating 700+ lines of code<span style="font-size:30px;">🎉🎊</span>');
+  localStorage.setItem("pop_700","ok");
 }
 var asis_var=0;
 function asist_off(){
