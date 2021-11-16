@@ -50,6 +50,8 @@ a{
   <span>+ assistive touch added</span><br>
   <span>+ reset option updated</span><br>
   <span>+ popup bug fixed</span><br>
+  <span>+ toast added</span><br>
+  <span>+ miner bugs fixed</span><br>
   <span>+ 🎉700+ lines of code</span>
 </div>
 <div class="login">
@@ -76,11 +78,11 @@ a{
 </div>
 <div class="asistive_touch">
   <div class="asis_launcher material-icons">menu</div>
-  <a href=""><div class="asis_1 material-icons">refresh
+  <a href=""><div class="refresh asis_1 material-icons">refresh
   </div></a>
   <div class="sign_in asis_2 material-icons">face
   </div>
-  <a href="mailto:ys.batth62@gmail.com?cc=ekamcosine@gmail.com&subject=FEEDBACK&body=/*Enter Your Feed Here*/"><div class="asis_3 material-icons">send
+  <a href="mailto:ys.batth62@gmail.com?cc=ekamcosine@gmail.com&subject=FEEDBACK&body=/*Enter Your Feed Here*/"><div class="feedback asis_3 material-icons">send
   </div></a>
   <div class="asis_4 material-icons" onclick="device_info_pop()">info</div>
   <div class="asis_5 reset material-icons">delete</div>
@@ -133,7 +135,7 @@ a{
 <footer>
   <div class="footer-copyright grey-text text-lighten-4">
     2021 Copyright
-    <div class="right version">version: v5.4.0</div>
+    <div class="right version">version: v5.5.3</div>
   </div>
 </footer>
 <script src="materialize.min.js"></script>
@@ -200,6 +202,7 @@ $(".btn_login").click(function(){
   $(".login").css({
     "transform":"translateX(-320px)"
   });
+  toast("saved successfully!!",3000);
 });
 $(".btn_login_cancel").click(function(){
   $(".login").css({
@@ -218,6 +221,15 @@ $(".sign_in").click(function(){
   $(".login").css({
     "transform":"translateX(0px)"
   });
+});
+$(".feedback").click(function(){
+    toast("opening...",3000);
+});
+$(".refresh").click(function(){
+    toast("refreshing...",3000);
+});
+$(".reset").click(function(){
+    toast("cleaning your data...",3000);
 });
 function pop(message){
   $("body").append($('<div></div>').attr("class","popup").html(message));
@@ -263,6 +275,16 @@ $(".asis_launcher").click(function (){
     asis_var--;
   }
 });
+function toast(msg,toast_duration){
+    $(".atoast").empty();
+    $("body").prepend($('<div></div>').attr("class","atoast"));
+    $(".atoast").append($('<div></div>').attr("class","tos").html(msg));
+    setTimeout(function(){
+        $(".atoast").empty();
+    },toast_duration);
+}
+toast("welcome!!",3000);
+//M.toast({html:'hi'});
 </script>
 <script src="preloader.js"></script>
 </body>
